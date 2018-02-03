@@ -2,10 +2,8 @@ import React from "react";
 import {
   Sidebar,
   Segment,
-  List,
   Menu,
-  Icon,
-  Link
+  Icon
 } from "semantic-ui-react";
 
 import Main from '../logged/logged.jsx';
@@ -16,6 +14,9 @@ class SidebarLeft extends React.Component {
   }
 
   state = { visible: false };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
@@ -37,16 +38,21 @@ class SidebarLeft extends React.Component {
             vertical
             inverted
           >
-            <Menu.Item name="home">
+            <Menu.Item 
+            name="home"
+            onClick={this.handleItemClick}>
               <Icon name="home" />
               Home
             </Menu.Item>
-            <Menu.Item name="groups">
-              <Icon name="users" />
+            <Menu.Item 
+            name="groups">
               Groups
+              <Menu.Menu>
+                  <Menu.Item onClick={this.handleItemClick} >Red Velvet - Bad Boy</Menu.Item>
+                  <Menu.Item onClick={this.handleItemClick} >Seventeen - Clap</Menu.Item>
+              </Menu.Menu>
             </Menu.Item>
-            <List.List>
-            </List.List>
+
             <Menu.Item name="signOut">
               <Icon name="sign out" />
               Sign Out
