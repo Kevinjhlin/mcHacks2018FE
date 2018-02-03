@@ -5,7 +5,8 @@ import {
   List,
   Menu,
   Icon,
-  Link
+  Link,
+  Container
 } from "semantic-ui-react";
 import { signOut } from "../../redux/user/userActionDispatcher";
 import { connect } from "react-redux";
@@ -28,8 +29,11 @@ class SidebarLeft extends React.Component {
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
   render() {
-    let divStyle = {
+
+    let background = {
+      backgroundColor: "#37BC9B",
       height: 50 + "em"
+
     };
 
     const { visible } = this.state;
@@ -57,21 +61,29 @@ class SidebarLeft extends React.Component {
             <List.List>
             </List.List>
             <a onClick={this.logMeOut}>          
-            <Menu.Item name="signOut">
-              <Icon name="sign out" />
-                Sign Out
-            </Menu.Item>
+              <Menu.Item name="signOut">
+                <Icon name="sign out" />
+                  Sign Out
+              </Menu.Item>
             </a>
           </Sidebar>
           <Sidebar.Pusher>
-            <Segment basic>
-              <Menu.Item onClick={this.toggleVisibility} >
-                <Icon name="sidebar" />
-              </Menu.Item>
-              <div style={divStyle}>
-                <Main />
+            <div className="ui top attached menu">
+              <div className="menu">
+              <Segment basic>
+                <Menu.Item onClick={this.toggleVisibility} >
+                  <Icon name="sidebar" />
+                </Menu.Item>
+              </Segment>
+              <h2>EAST2WEST</h2>
               </div>
-            </Segment>
+            </div>
+            <br/>
+            <div style={background}>
+                <Container>
+                  <Main />
+                </Container> 
+            </div>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>

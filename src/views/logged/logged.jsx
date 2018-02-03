@@ -1,21 +1,29 @@
 import React from "react";
 
 import Schedule from '../../components/calender/calender.jsx';
+import { connect } from "react-redux";
 
 class Main extends React.Component {
-
+  constructor(props) {
+    super(props);
+    // this.logMeOut = this.logMeOut.bind(this);
+  }
 
   render() {
     return (
       <div>
-        You have succesfully logged in! You can't sign out now though. However, it is implemented, you'll have to figure
-        out how to do that :) 
-
-        <Schedule />
+        <h2 >Schedule</h2>
+        <Schedule {...this.props} />
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => {
+  return { 
+  };
+}
 
-export default (Main);
+const mapToDispatch = {};
+
+export default connect(mapStateToProps, mapToDispatch)(Main);
