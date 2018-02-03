@@ -7,12 +7,20 @@ import {
   Icon,
   Link
 } from "semantic-ui-react";
+import { signOut } from "../../redux/user/userActionDispatcher";
+import { connect } from "react-redux";
 
 import Main from '../logged/logged.jsx';
 
 class SidebarLeft extends React.Component {
   constructor(props) {
     super(props);
+    this.logMeOut = this.logMeOut.bind(this);
+  }
+
+  logMeOut(event) {
+    event.preventDefault();
+    this.props.signOut();
   }
 
   state = { visible: false };
@@ -25,6 +33,7 @@ class SidebarLeft extends React.Component {
     };
 
     const { visible } = this.state;
+    
     return (
       <div>
         <Sidebar.Pushable as={Segment}>
@@ -47,10 +56,12 @@ class SidebarLeft extends React.Component {
             </Menu.Item>
             <List.List>
             </List.List>
+            <a onClick={this.logMeOut}>          
             <Menu.Item name="signOut">
               <Icon name="sign out" />
-              Sign Out
+                Sign Out
             </Menu.Item>
+            </a>
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic>
@@ -68,5 +79,11 @@ class SidebarLeft extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return { 
+  };
+}
 
-export default SidebarLeft;
+const mapToDispatch = {signOut};
+
+export default connect(mapStateToProps, mapToDispatch)(SidebarLeft);
