@@ -1,4 +1,5 @@
 import React from "react";
+import { signOut } from "../../redux/user/userActionDispatcher";
 
 class Main extends React.Component {
   render() {
@@ -11,4 +12,14 @@ class Main extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return { 
+      game: state.game
+  };
+}
+
+const mapToDispatch = (dispatch) => {
+    logOut: () => dispatch( signOut() )
+};
 export default Main;
+export default connect(mapState, mapDispatch)(Main);
