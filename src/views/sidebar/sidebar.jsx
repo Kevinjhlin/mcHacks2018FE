@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Sidebar,
   Segment,
@@ -8,7 +8,13 @@ import {
   Link
 } from "semantic-ui-react";
 
-class SidebarLeft extends Component {
+import Main from '../logged/logged.jsx';
+
+class SidebarLeft extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = { visible: false };
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
@@ -48,12 +54,11 @@ class SidebarLeft extends Component {
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic>
-              
               <Menu.Item onClick={this.toggleVisibility} >
                 <Icon name="sidebar" />
               </Menu.Item>
               <div style={divStyle}>
-                Testing SideBar content
+                <Main />
               </div>
             </Segment>
           </Sidebar.Pusher>
@@ -62,5 +67,6 @@ class SidebarLeft extends Component {
     );
   }
 }
+
 
 export default SidebarLeft;
