@@ -2,6 +2,8 @@ import React from "react";
 import { signOut } from "../../redux/user/userActionDispatcher";
 import { connect } from "react-redux";
 
+import Schedule from '../../components/calender/calender.jsx';
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +22,7 @@ class Main extends React.Component {
         out how to do that :) 
         <br/>
         <button onClick={this.logMeOut}> Logout </button>
-
+        <Schedule />
       </div>
     );
   }
