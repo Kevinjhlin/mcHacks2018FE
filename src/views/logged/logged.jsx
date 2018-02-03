@@ -1,12 +1,26 @@
 import React from "react";
 import { signOut } from "../../redux/user/userActionDispatcher";
+import { connect } from "react-redux";
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logMeOut = this.logMeOut.bind(this);
+  }
+
+  logMeOut(event) {
+    event.preventDefault();
+    this.props.signOut();
+  }
+
   render() {
     return (
       <div>
         You have succesfully logged in! You can't sign out now though. However, it is implemented, you'll have to figure
         out how to do that :) 
+        <br/>
+        <button onClick={this.logMeOut}> Logout </button>
+
       </div>
     );
   }
@@ -14,12 +28,8 @@ class Main extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
-      game: state.game
   };
 }
 
-const mapToDispatch = (dispatch) => {
-    logOut: () => dispatch( signOut() )
-};
-export default Main;
-export default connect(mapState, mapDispatch)(Main);
+const mapToDispatch = {signOut};
+export default connect(mapStateToProps, mapToDispatch)(Main);
