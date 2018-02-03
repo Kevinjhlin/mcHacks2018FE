@@ -26,5 +26,5 @@ export const login = credentials => async dispatch => {
 export const signOut = () => dispatch => {
   localStorage.clear(); //clear local storage
   dispatch(logout()); //dispatch logout
-  history.push("/login");
+  history.push("/");
 };
