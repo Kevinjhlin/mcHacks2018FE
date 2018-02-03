@@ -2,9 +2,8 @@ import React from "react";
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
-import events from './events'
 
- BigCalendar.momentLocalizer(moment);
+BigCalendar.momentLocalizer(moment);
 
 
 let Schedule = props => {
