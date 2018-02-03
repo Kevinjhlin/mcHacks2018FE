@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import {
   Sidebar,
   Segment,
-  Button,
+  List,
   Menu,
   Icon,
-  Header
+  Link
 } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 
 class SidebarLeft extends Component {
   state = { visible: false };
@@ -40,6 +39,8 @@ class SidebarLeft extends Component {
               <Icon name="users" />
               Groups
             </Menu.Item>
+            <List.List>
+            </List.List>
             <Menu.Item name="signOut">
               <Icon name="sign out" />
               Sign Out
