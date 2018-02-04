@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import {
     Container,
     Grid,
@@ -21,8 +20,7 @@ class Group extends React.Component {
                         <Segment basic>
                             <h2> Singer - Song </h2>
                             <Schedule />
-                        </Segment>
-                        
+                        </Segment>   
                     </Grid.Column>
                     <Grid.Column>
                         <Segment basic>
