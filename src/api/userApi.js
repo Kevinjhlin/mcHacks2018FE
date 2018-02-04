@@ -3,17 +3,18 @@ import axios from "axios";
 
 class User {
     static async authenticated(credentials) {
+
         try {
-            console.log("hello")
-            let response = Promise.resolve(await axios.post("/room", {name:"ass", owner:1, description:"whole"}));
+            console.log("hello world")  
+            let response = Promise.resolve(await axios.post("/login", credentials));
             return (response)
         }
         catch(error){
-            console.log(error)
             throw Promise.resolve(error)
         }
     }
 }
+
 
 export default User
 /*
