@@ -12,6 +12,7 @@ export const login = credentials => async dispatch => {
     let authenticated = await User.authenticated(credentials)
 
     if (authenticated) {
+      
       dispatch(loginSuccess()); //dispatch the successful login call
       history.push("/home"); //change page
       localStorage.setItem("isLoggedIn", "true")

@@ -10,6 +10,7 @@ import {
   Icon
 } from "semantic-ui-react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import "./main.css";
 
 class Main extends React.Component {
@@ -67,7 +68,6 @@ class Main extends React.Component {
     }
     this.props.login(credentials);
   }
-
   render() {
     const { error } = this.state;
     return (
@@ -110,9 +110,11 @@ class Main extends React.Component {
                   <Button type="submit" primary>
                     Login
                   </Button>
+                  <Link to="/signup">
                   <Button secondary>
                     Sign up
                   </Button>
+                  </Link>
                 </Segment>
               </Form>
             </Grid.Column>

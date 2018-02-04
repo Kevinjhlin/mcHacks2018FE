@@ -12,7 +12,7 @@ const reducer = (state = initial, action) => {
       });
     //on fail, post the error
     case types.LOGIN_FAIL:
-      return Object.assign({}, state, {
+      return Object.assign({}, state, { 
         errors: action.error,
       });
     //null token and unauthenticates the user
