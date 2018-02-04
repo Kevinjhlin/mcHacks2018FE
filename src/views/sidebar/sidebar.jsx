@@ -69,9 +69,6 @@ class SidebarLeft extends React.Component {
                   <Menu.Item onClick={this.handleItemClick} >Seventeen - Clap</Menu.Item>
               </Menu.Menu>
             </Menu.Item>
-
-            <List.List>
-            </List.List>
             <a onClick={this.logMeOut}>          
               <Menu.Item name="signOut">
                 <Icon name="sign out" />
