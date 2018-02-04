@@ -5,11 +5,6 @@ class User {
     static async authenticated(credentials) {
 
         try {
-<<<<<<< HEAD
-            console.log("hello")
-=======
-            console.log("hello world")  
->>>>>>> a8ec4bbbac1e56051dd99191178c66cd589fea88
             let response = Promise.resolve(await axios.post("/login", credentials));
             return (response)
         }
