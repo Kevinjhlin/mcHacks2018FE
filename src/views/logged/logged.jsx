@@ -15,17 +15,19 @@ class Main extends React.Component {
     this.props.signOut();
   }
 
+
+
   render() {
-    return (
-      <div>
-        You have succesfully logged in! You can't sign out now though. However, it is implemented, you'll have to figure
-        out how to do that :) 
+    return(
+        <div>
+            You have succesfully logged in! You can't sign out now though. However, it is implemented, you'll have to figure
+            out how to do that :) 
         <br/>
         <button onClick={this.logMeOut}> Logout </button>
         <Schedule />
-      </div>
-    );
-  }
+</div>
+ )    
+}
 }
 
 const mapStateToProps = (state) => {

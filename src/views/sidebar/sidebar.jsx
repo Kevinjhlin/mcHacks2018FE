@@ -47,6 +47,7 @@ class SidebarLeft extends React.Component {
             <Menu.Item 
             name="groups">
               Groups
+              {/*TODO: implement for loop for every group that the user is in. Currently hardcoded template examples.*/}
               <Menu.Menu>
                   <Menu.Item onClick={this.handleItemClick} >Red Velvet - Bad Boy</Menu.Item>
                   <Menu.Item onClick={this.handleItemClick} >Seventeen - Clap</Menu.Item>
@@ -64,6 +65,7 @@ class SidebarLeft extends React.Component {
                 <Icon name="sidebar" />
               </Menu.Item>
               <div style={divStyle}>
+                
                 <Main />
               </div>
             </Segment>
