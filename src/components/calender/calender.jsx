@@ -9,7 +9,7 @@ BigCalendar.momentLocalizer(moment);
 let Schedule = props => {
 
   return (
-    <div style={{backgroundColor: "white",padding:"2%"}}>
+    <div style={{backgroundColor: "white"}}>
     <BigCalendar
       selectable
       events={[]}
@@ -18,14 +18,8 @@ let Schedule = props => {
       scrollToTime={new Date()}
       defaultDate={new Date()}
       onSelectEvent={event => alert(event.title)}
-      onSelectSlot={slotInfo =>
-
-        props.hello()
-        // alert(
-        //   `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
-        //     `\nend: ${slotInfo.end.toLocaleString()}` +
-        //     `\naction: ${slotInfo.action}`
-        // )
+      onSelectSlot={slotInfo => 
+        props.selectTime(slotInfo.start,slotInfo.end)
       }
     />
     </div>

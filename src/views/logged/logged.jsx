@@ -1,13 +1,15 @@
 import React from "react";
-
+import { selectTime } from '../../redux/schedule/scheduleActionDispatcher';
 import Schedule from '../../components/calender/calender.jsx';
 import { connect } from "react-redux";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    // this.logMeOut = this.logMeOut.bind(this);
+    this.selectTime = this.selectTime.bind(this);
   }
+
+  
 
   render() {
     return (
@@ -21,9 +23,10 @@ class Main extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
+    schedule: state.schedule
   };
 }
 
-const mapToDispatch = {};
+const mapToDispatch = {selectTime };
 
 export default connect(mapStateToProps, mapToDispatch)(Main);
