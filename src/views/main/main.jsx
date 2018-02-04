@@ -1,6 +1,8 @@
 import React from "react";
 import { login } from "../../redux/user/userActionDispatcher";
+import { Container, Button } from 'semantic-ui-react'
 import { connect } from "react-redux";
+import './main.css';
 
 class Main extends React.Component {
   constructor(props) {
@@ -14,9 +16,13 @@ class Main extends React.Component {
   }
 
   render() {
+
     return (
-      <div>
-        <button onClick={this.handleClick}> Login </button>
+      <div >
+        <Container id="loginBox" textAlign='center'>
+          <h2>Dance Yo</h2>
+          <Button  onClick={this.handleClick} primary>Login</Button>
+        </Container>
       </div>
     );
   }
