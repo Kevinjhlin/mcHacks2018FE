@@ -5,7 +5,7 @@ class User {
     static async authenticated(credentials) {
         try {
             console.log("hello")
-            let response = Promise.resolve(await axios.post("/room", {name:"ass", owner:1, description:"whole"}));
+            let response = Promise.resolve(await axios.post("/login", credentials));
             return (response)
         }
         catch(error){

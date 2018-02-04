@@ -14,6 +14,7 @@ export const login = credentials => async dispatch => {
     if (authenticated) {
       dispatch(loginSuccess()); //dispatch the successful login call
       history.push("/home"); //change page
+      localStorage.setItem("isLoggedIn", "true")
     }
     else{
       dispatch(loginFail("Login Failed"));
