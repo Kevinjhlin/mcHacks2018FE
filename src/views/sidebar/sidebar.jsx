@@ -3,14 +3,26 @@ import {
   Sidebar,
   Segment,
   Menu,
-  Icon
+
+  Icon,
+  Link,
+  Container
+
 } from "semantic-ui-react";
+import { signOut } from "../../redux/user/userActionDispatcher";
+import { connect } from "react-redux";
 
 import Main from '../logged/logged.jsx';
 
 class SidebarLeft extends React.Component {
   constructor(props) {
     super(props);
+    this.logMeOut = this.logMeOut.bind(this);
+  }
+
+  logMeOut(event) {
+    event.preventDefault();
+    this.props.signOut();
   }
 
   state = { visible: false };
@@ -21,11 +33,15 @@ class SidebarLeft extends React.Component {
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
   render() {
-    let divStyle = {
+
+    let background = {
+      backgroundColor: "#37BC9B",
       height: 50 + "em"
+
     };
 
     const { visible } = this.state;
+    
     return (
       <div>
         <Sidebar.Pushable as={Segment}>
@@ -54,21 +70,32 @@ class SidebarLeft extends React.Component {
               </Menu.Menu>
             </Menu.Item>
 
-            <Menu.Item name="signOut">
-              <Icon name="sign out" />
-              Sign Out
-            </Menu.Item>
+            <List.List>
+            </List.List>
+            <a onClick={this.logMeOut}>          
+              <Menu.Item name="signOut">
+                <Icon name="sign out" />
+                  Sign Out
+              </Menu.Item>
+            </a>
           </Sidebar>
           <Sidebar.Pusher>
-            <Segment basic>
-              <Menu.Item onClick={this.toggleVisibility} >
-                <Icon name="sidebar" />
-              </Menu.Item>
-              <div style={divStyle}>
-                
-                <Main />
+            <div className="ui top attached menu">
+              <div className="menu">
+              <Segment basic>
+                <Menu.Item onClick={this.toggleVisibility} >
+                  <Icon name="sidebar" />
+                </Menu.Item>
+              </Segment>
+              <h2>EAST2WEST</h2>
               </div>
-            </Segment>
+            </div>
+            <br/>
+            <div style={background}>
+                <Container>
+                  <Main />
+                </Container> 
+            </div>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>
@@ -76,5 +103,11 @@ class SidebarLeft extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return { 
+  };
+}
 
-export default SidebarLeft;
+const mapToDispatch = {signOut};
+
+export default connect(mapStateToProps, mapToDispatch)(SidebarLeft);

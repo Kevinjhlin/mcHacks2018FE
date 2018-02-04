@@ -1,39 +1,36 @@
 import React from "react";
-import { signOut } from "../../redux/user/userActionDispatcher";
-import { connect } from "react-redux";
-
+import { selectTime } from '../../redux/schedule/scheduleActionDispatcher';
 import Schedule from '../../components/calender/calender.jsx';
+import { connect } from "react-redux";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.logMeOut = this.logMeOut.bind(this);
+    this.selectTime = this.selectTime.bind(this);
   }
 
-  logMeOut(event) {
-    event.preventDefault();
-    this.props.signOut();
-  }
+  
 
 
 
   render() {
-    return(
-        <div>
-            You have succesfully logged in! You can't sign out now though. However, it is implemented, you'll have to figure
-            out how to do that :) 
-        <br/>
-        <button onClick={this.logMeOut}> Logout </button>
-        <Schedule />
-</div>
- )    
-}
+
+    return (
+      <div>
+        <h2 >Schedule</h2>
+        <Schedule {...this.props} />
+      </div>
+    );
+  }
+
 }
 
 const mapStateToProps = (state) => {
   return { 
+    schedule: state.schedule
   };
 }
 
-const mapToDispatch = {signOut};
+const mapToDispatch = {selectTime };
+
 export default connect(mapStateToProps, mapToDispatch)(Main);
