@@ -7,10 +7,11 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
 
-    {/* There is something wrong with this. Seek salvation.
+    /* There is something wrong with this. Seek salvation.
       
     this.selectTime = this.selectTime.bind(this); 
-    */}
+    */
+    this.selectTime = selectTime.bind(this); 
   }
 
   

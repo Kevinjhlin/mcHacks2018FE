@@ -12,7 +12,7 @@ import {
 import { signOut } from "../../redux/user/userActionDispatcher";
 import { connect } from "react-redux";
 
-import Main from '../logged/logged.jsx';
+import PersonalSchedule from '../personalPage/personalSchedule';
 
 class SidebarLeft extends React.Component {
   constructor(props) {
@@ -98,7 +98,7 @@ class SidebarLeft extends React.Component {
             <br/>
             <div style={background}>
                 <Container>
-                  <Main />
+                  <PersonalSchedule />
                 </Container> 
             </div>
           </Sidebar.Pusher>
