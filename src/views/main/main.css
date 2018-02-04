@@ -3,3 +3,7 @@
     margin-top: 25%;
 }
 .grid { height: 100%; }
+
+body {
+    background-color: rgb(224, 201, 199);
+}

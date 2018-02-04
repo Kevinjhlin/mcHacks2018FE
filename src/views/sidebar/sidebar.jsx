@@ -18,6 +18,9 @@ class SidebarLeft extends React.Component {
   constructor(props) {
     super(props);
     this.logMeOut = this.logMeOut.bind(this);
+    this.state ={
+      username: "XxXAsianNinjaXxX"
+    }
   }
 
   logMeOut(event) {
@@ -35,11 +38,14 @@ class SidebarLeft extends React.Component {
   render() {
 
     let background = {
-      backgroundColor: "#37BC9B",
+      backgroundColor: "#FFFFFF",
       height: 50 + "em"
 
     };
 
+    let headerBackground = {
+      backgroundColor: "#E0C9C7"
+    }
     const { visible } = this.state;
     
     return (
@@ -77,14 +83,16 @@ class SidebarLeft extends React.Component {
             </a>
           </Sidebar>
           <Sidebar.Pusher>
-            <div className="ui top attached menu">
+            <div className="ui top attached menu" style={headerBackground}>
               <div className="menu">
               <Segment basic>
                 <Menu.Item onClick={this.toggleVisibility} >
                   <Icon name="sidebar" />
                 </Menu.Item>
               </Segment>
-              <h2>EAST2WEST</h2>
+            
+              {/* Change to reflect Logged in user*/}
+              <h2> {this.state.username} | EAST2WEST</h2>
               </div>
             </div>
             <br/>

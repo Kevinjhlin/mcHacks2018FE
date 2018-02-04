@@ -6,7 +6,11 @@ import { connect } from "react-redux";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.selectTime = this.selectTime.bind(this);
+
+    {/* There is something wrong with this. Seek salvation.
+      
+    this.selectTime = this.selectTime.bind(this); 
+    */}
   }
 
   
