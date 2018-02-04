@@ -3,7 +3,7 @@ import { selectTime } from '../../redux/schedule/scheduleActionDispatcher';
 import Schedule from '../../components/calender/calender.jsx';
 import { connect } from "react-redux";
 
-class Main extends React.Component {
+class PersonalSchedule extends React.Component {
   constructor(props) {
     super(props);
 
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
 
 const mapToDispatch = {selectTime };
 
-export default connect(mapStateToProps, mapToDispatch)(Main);
+export default connect(mapStateToProps, mapToDispatch)(PersonalSchedule);

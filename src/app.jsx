@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={noRequireAuth(Main)} />
-        <Route path="/logged" component={requireAuth(Home)} />
+        <Route path="/home" component={requireAuth(Home)} />
       </Switch>
     );
   }

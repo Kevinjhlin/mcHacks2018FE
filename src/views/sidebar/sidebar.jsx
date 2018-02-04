@@ -3,9 +3,7 @@ import {
   Sidebar,
   Segment,
   Menu,
-
   Icon,
-  Link,
   Container
 
 } from "semantic-ui-react";
@@ -19,7 +17,7 @@ class SidebarLeft extends React.Component {
     super(props);
     this.logMeOut = this.logMeOut.bind(this);
     this.state ={
-      username: "XxXAsianNinjaXxX"
+      username: ""
     }
   }
 

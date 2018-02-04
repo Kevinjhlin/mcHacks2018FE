@@ -61,15 +61,18 @@ class Main extends React.Component {
 
   //Here is where we check the db if input values are valid.
   handleClick(event) {
-    //event.preventDefault();
-    this.props.login();
+    let credentials = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    this.props.login(credentials);
   }
 
   render() {
     const { error } = this.state;
     return (
       <div className="form">
-        <Container id="loginBox" textAlign="top">
+        <Container id="loginBox" textAlign="center">
           <Header as="h2" color="violet" textAlign="center">
             EAST2WEST SCHEDULERINO 2THOUSANERINO
           </Header>
