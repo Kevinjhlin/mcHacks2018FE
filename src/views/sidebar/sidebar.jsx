@@ -2,11 +2,12 @@ import React from "react";
 import {
   Sidebar,
   Segment,
-  List,
   Menu,
+
   Icon,
   Link,
   Container
+
 } from "semantic-ui-react";
 import { signOut } from "../../redux/user/userActionDispatcher";
 import { connect } from "react-redux";
@@ -25,6 +26,9 @@ class SidebarLeft extends React.Component {
   }
 
   state = { visible: false };
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
 
@@ -50,14 +54,22 @@ class SidebarLeft extends React.Component {
             vertical
             inverted
           >
-            <Menu.Item name="home">
+            <Menu.Item 
+            name="home"
+            onClick={this.handleItemClick}>
               <Icon name="home" />
               Home
             </Menu.Item>
-            <Menu.Item name="groups">
-              <Icon name="users" />
+            <Menu.Item 
+            name="groups">
               Groups
+              {/*TODO: implement for loop for every group that the user is in. Currently hardcoded template examples.*/}
+              <Menu.Menu>
+                  <Menu.Item onClick={this.handleItemClick} >Red Velvet - Bad Boy</Menu.Item>
+                  <Menu.Item onClick={this.handleItemClick} >Seventeen - Clap</Menu.Item>
+              </Menu.Menu>
             </Menu.Item>
+
             <List.List>
             </List.List>
             <a onClick={this.logMeOut}>          
