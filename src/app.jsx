@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "./views/main/main";
-import Logged from "./views/logged/logged";
+// import Logged from "./views/logged/logged";
+import Home from "./views/sidebar/sidebar";
 import { Route, Switch } from "react-router-dom";
 import requireAuth from "./config/requireAuth";
 import noRequireAuth from "./config/noRequireAuth";
@@ -10,7 +11,7 @@ class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" component={noRequireAuth(Main)} />
-        <Route path="/logged" component={requireAuth(Logged)} />
+        <Route path="/home" component={requireAuth(Home)} />
       </Switch>
     );
   }
